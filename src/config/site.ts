@@ -5,7 +5,8 @@
 export const site = {
   name: "Velocímetro Brasil",
   tagline: "Teste de velocidade de internet",
-  url: "https://velocimetrobrasil.com.br",
+  /** URL canônica (sem barra final). `NEXT_PUBLIC_SITE_URL` sobrescreve no build (ex.: preview no GitHub Pages). */
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://velocimetrobrasil.com.br").replace(/\/$/, ""),
   locale: "pt_BR",
   lang: "pt-BR",
   description:
