@@ -12,8 +12,9 @@ export interface PageSeo {
   absoluteTitle?: string;
 }
 
+/** `site.url` + caminho absoluto. Preserva o subcaminho de `site.url` (ex.: GitHub Pages). */
 export function absoluteUrl(path: string): string {
-  return new URL(path, site.url).toString();
+  return `${site.url}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
 export function buildMetadata(seo: PageSeo): Metadata {
