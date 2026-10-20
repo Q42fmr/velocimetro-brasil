@@ -10,7 +10,7 @@ export const site = {
   locale: "pt_BR",
   lang: "pt-BR",
   description:
-    "Teste de velocidade de internet grátis: meça download, upload, ping e jitter da sua conexão banda larga, Wi-Fi ou fibra em segundos, direto no navegador.",
+    "Teste de velocidade de internet grátis: meça a velocidade da internet (download, upload, ping e jitter) no Wi-Fi, fibra ou 4G com o medidor de internet do Velocímetro Brasil.",
 
   /** Dados jurídicos exibidos no rodapé, Termos de Uso e Política de Privacidade. */
   legal: {
@@ -50,6 +50,8 @@ export const site = {
   /** Links internos são relativos à pasta do site (arquivos planos): funcionam em qualquer servidor, subpasta ou file://. */
   nav: [
     { href: "index.html", label: "Teste de velocidade" },
+    { href: "operadoras.html", label: "Por operadora" },
+    { href: "comparativo.html", label: "Comparativo" },
     { href: "faq.html", label: "FAQ" },
     { href: "glossario.html", label: "Glossário" },
     { href: "fale-conosco.html", label: "Fale conosco" },
