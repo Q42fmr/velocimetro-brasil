@@ -36,3 +36,4 @@ html[data-contrast="high"] .checklist li::before { color: var(--color-on-primary
 
 .table { font-size: 0.95rem; }
 .table td:nth-child(2) { white-space: nowrap; font-weight: 600; }
+.caption { caption-side: top; text-align: left; font-weight: 600; font-size: 0.9rem; color: var(--color-muted); padding: 0 0 0.5rem; }

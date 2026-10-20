@@ -9,14 +9,15 @@ import { buildMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
 export const metadata = buildMetadata({
-  absoluteTitle: "Teste de Velocidade de Internet: Speed Test Grátis | Velocímetro Brasil",
+  absoluteTitle: "Teste de Velocidade de Internet Grátis — Medidor de Internet | Velocímetro Brasil",
   title: "Teste de Velocidade de Internet",
-  description: site.description,
+  description:
+    "Teste de velocidade de internet grátis: meça a velocidade da internet (download, upload, ping e jitter) no Wi-Fi, fibra ou 4G com o medidor de internet do Velocímetro Brasil.",
   path: "/",
   keywords: pageKeywords("home"),
 });
 
-const HOME_FAQ_IDS = ["como-fazer-o-teste", "resultado-diferente-do-contratado", "mbps-vs-mb-por-segundo", "wifi-ou-cabo", "teste-consome-franquia"];
+const HOME_FAQ_IDS = ["como-fazer-o-teste", "funciona-com-vivo-claro-oi-tim", "resultado-diferente-do-contratado", "mbps-vs-mb-por-segundo", "wifi-ou-cabo", "teste-consome-franquia"];
 
 export default function HomePage() {
   const faqTeaser = HOME_FAQ_IDS.flatMap((id) => faqItems.filter((f) => f.id === id));
@@ -43,9 +44,9 @@ export default function HomePage() {
         <div className="container">
           <h1 className={styles.title}>Teste de velocidade de internet</h1>
           <p className={styles.lead}>
-            Meça agora a velocidade real da sua conexão. O speed test do {site.name} mede <strong>download</strong>,{" "}
-            <strong>upload</strong>, <strong>ping</strong> e <strong>jitter</strong> em menos de um minuto, direto no
-            navegador, sem instalar nada e sem cadastro.
+            Medidor de internet grátis: teste a velocidade da internet agora e veja <strong>download</strong>,{" "}
+            <strong>upload</strong>, <strong>ping</strong> e <strong>jitter</strong> em menos de um minuto. Teste de
+            conexão direto no navegador — Wi-Fi, fibra, cabo ou 4G/5G — sem instalar nada e sem cadastro.
           </p>
           <SpeedTest />
         </div>
@@ -54,11 +55,14 @@ export default function HomePage() {
       <section className="section" id="como-funciona" aria-labelledby="como-funciona-titulo">
         <div className="container">
           <h2 id="como-funciona-titulo" className="section__title">
-            Como funciona o teste de velocidade
+            Como funciona o teste de velocidade da internet
           </h2>
           <p className="section__lead">
-            O velocímetro de internet envia e recebe dados reais entre o seu dispositivo e um servidor de medição e calcula
-            quanto a sua banda larga consegue transferir por segundo.
+            Chame como preferir — teste velocidade internet, teste de internet, testar internet, wifi teste ou medidor
+            de internet — o princípio é o mesmo: o velocímetro envia e recebe dados reais entre o seu dispositivo e um
+            servidor de medição e calcula quanto a sua banda larga consegue transferir por segundo. É uma medição real,
+            não uma estimativa: a velocidade da internet exibida é a que o seu dispositivo conseguiu de fato no momento
+            do teste.
           </p>
           <ol className={styles.steps}>
             <li>
@@ -123,8 +127,8 @@ export default function HomePage() {
                 Pré-requisitos e orientações para um teste preciso
               </h2>
               <p className="section__lead">
-                O resultado do teste de conexão reflete o momento da medição. Para que ele represente a velocidade
-                contratada da sua banda larga, siga estas recomendações:
+                O resultado do teste de conexão reflete o momento da medição. Para que o teste de velocidade de internet
+                residencial represente a velocidade contratada da sua banda larga, siga estas recomendações:
               </p>
               <ul className={styles.checklist}>
                 <li>Use um navegador atualizado (Chrome, Firefox, Edge ou Safari) com JavaScript habilitado.</li>
@@ -142,6 +146,7 @@ export default function HomePage() {
               </p>
               <div className="table-wrap">
               <table className={styles.table}>
+                <caption className={styles.caption}>Velocidade internet recomendada por atividade</caption>
                 <thead>
                   <tr>
                     <th scope="col">Atividade</th>
@@ -191,7 +196,7 @@ export default function HomePage() {
       <section className="section section--alt" aria-labelledby="melhorar-titulo">
         <div className="container">
           <h2 id="melhorar-titulo" className="section__title">
-            Internet lenta? Como melhorar a velocidade da sua conexão
+            Internet lenta? Como melhorar a velocidade e ter uma internet rápida
           </h2>
           <div className="grid grid--3">
             <article className="card">
@@ -240,7 +245,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="faq-titulo">
+      <section className="section" aria-labelledby="operadoras-titulo">
+        <div className="container">
+          <h2 id="operadoras-titulo" className="section__title">
+            Teste de velocidade Vivo, Claro, Oi, TIM e qualquer provedor
+          </h2>
+          <p className="section__lead">
+            O medidor de velocidade funciona com qualquer operadora de internet residencial ou móvel. Use-o como teste
+            de velocidade Vivo Fibra, Claro, Oi Fibra, TIM Live ou de provedores regionais e compare o resultado com o
+            plano contratado — de 100 Mega a 1 Giga de internet de alta velocidade.
+          </p>
+          <div className="grid grid--2">
+            <article className="card">
+              <h3 className="card__title">Teste de velocidade por operadora</h3>
+              <p className="card__text">
+                Guia por provedor: o que esperar de cada tecnologia (fibra, cabo, 4G/5G), como consultar a velocidade da
+                sua internet e o que fazer quando ela não bate com o contrato.
+              </p>
+              <p style={{ marginTop: "0.75rem", marginBottom: 0 }}>
+                <a href="operadoras.html" className="btn btn--ghost">
+                  Ver guia por operadora
+                </a>
+              </p>
+            </article>
+            <article className="card">
+              <h3 className="card__title">Brasil Banda Larga, Speedtest by Ookla, Fast.com ou nPerf?</h3>
+              <p className="card__text">
+                Cada teste de speed usa servidores e métodos diferentes, por isso os números variam. Entenda o que cada
+                medidor mede e quando usar cada um.
+              </p>
+              <p style={{ marginTop: "0.75rem", marginBottom: 0 }}>
+                <a href="comparativo.html" className="btn btn--ghost">
+                  Comparar os medidores de velocidade
+                </a>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section className="section section--alt" aria-labelledby="faq-titulo">
         <div className="container">
           <h2 id="faq-titulo" className="section__title">
             Perguntas frequentes sobre o teste de velocidade

@@ -13,8 +13,8 @@ export function Footer() {
             <strong>{site.name}</strong>
           </div>
           <p className={styles.text}>
-            Teste de velocidade de internet gratuito, sem instalação e sem cadastro. Meça download, upload, ping e jitter
-            da sua conexão banda larga direto no navegador.
+            Teste internet grátis, sem instalação e sem cadastro: meça download, upload, ping e jitter da sua conexão
+            banda larga direto no navegador.
           </p>
         </div>
 

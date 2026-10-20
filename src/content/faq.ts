@@ -129,4 +129,36 @@ export const faqItems: FaqItem[] = [
       "Se a velocidade contratada continuar não sendo entregue mesmo em testes por cabo, entre em contato com a operadora informando os resultados obtidos. Caso o problema não seja resolvido, é possível registrar uma reclamação na Anatel ou no portal consumidor.gov.br, citando a regra de velocidade mínima do RGQ-SCM.",
     ],
   },
+  {
+    id: "funciona-com-vivo-claro-oi-tim",
+    question: "O teste funciona como teste de velocidade Vivo, Claro, Oi ou TIM?",
+    answer: [
+      "Sim. O medidor de internet não depende da operadora: ele mede a velocidade entre o seu dispositivo e um servidor na internet, seja a conexão Vivo Fibra, Claro, Oi Fibra, TIM Live, um provedor regional ou 4G/5G no celular.",
+      "A diferença está no que esperar de cada tecnologia: na fibra o upload costuma ser alto, no cabo ele é bem menor que o download e no 4G/5G a velocidade varia com o sinal. Veja o guia de teste de velocidade por operadora para interpretar o seu resultado.",
+    ],
+  },
+  {
+    id: "brasil-banda-larga-ookla-fast",
+    question: "Qual a diferença entre este medidor e o Brasil Banda Larga, o Speedtest by Ookla ou o Fast.com?",
+    answer: [
+      "O Brasil Banda Larga é o teste de velocidade da EAQ, entidade ligada à Anatel, e serve como medição oficial para reclamações — o teste completo exige instalar um programa. O Speedtest by Ookla permite escolher o servidor, muitas vezes dentro da própria operadora, o que tende a mostrar números mais altos. O Fast.com, da Netflix, mede contra os servidores da Netflix e foca no download.",
+      "O Velocímetro Brasil roda no navegador, sem instalação, e mede download, upload, ping e jitter contra um servidor externo à operadora — um retrato realista do que você recebe da internet. Os números podem diferir entre os medidores por causa do servidor, do método e do horário; o nosso comparativo explica cada caso.",
+    ],
+  },
+  {
+    id: "velocidade-do-site-ou-da-internet",
+    question: "O teste mede a velocidade do site ou a velocidade da minha internet?",
+    answer: [
+      "Mede a velocidade da sua internet. O site apenas coordena o teste; os dados de download e upload trafegam entre o seu dispositivo e um servidor de medição de alta capacidade, dimensionado para não ser o gargalo. Se um site específico está lento mas o teste mostra boa velocidade, o problema está naquele site ou na rota até ele, não na sua conexão.",
+      "Para consultar a velocidade da sua internet com precisão, feche outros programas e aparelhos que usem a rede e repita o teste de conexão duas ou três vezes.",
+    ],
+  },
+  {
+    id: "testar-sinal-wifi",
+    question: "Sinal WiFi: teste em dois pontos da casa para saber se o Wi-Fi está bom",
+    answer: [
+      "Faça o teste de velocidade duas vezes: uma com o aparelho ao lado do roteador e outra no cômodo onde a internet parece lenta. Se o primeiro resultado é bom e o segundo cai muito, o problema é o sinal Wi-Fi, não a operadora — paredes, distância e interferência de outros aparelhos reduzem a velocidade.",
+      "Compare também o Wi-Fi com o cabo de rede: se por cabo a velocidade chega ao contratado e pelo Wi-Fi não, considere mudar o roteador de lugar, usar a rede de 5 GHz ou instalar um repetidor ou sistema mesh.",
+    ],
+  },
 ];

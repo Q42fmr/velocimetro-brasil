@@ -47,6 +47,15 @@ export const glossaryTerms: GlossaryTerm[] = [
     related: ["mbps", "mb-por-segundo"],
   },
   {
+    id: "brasil-banda-larga-eaq",
+    term: "Brasil Banda Larga (EAQ)",
+    definition: [
+      "Brasil Banda Larga (brasilbandalarga.com.br) é o teste de velocidade mantido pela EAQ — Entidade de Aferição da Qualidade, criada por determinação da Anatel para medir a qualidade da banda larga no país. Oferece um teste rápido no site e um teste completo, com perda de pacotes, por programa ou aplicativo.",
+      "Seus resultados são a referência para reclamações formais sobre velocidade contratada. Para o acompanhamento do dia a dia, um medidor de velocidade no navegador, como o Velocímetro Brasil, dá o mesmo panorama de download, upload, ping e jitter sem instalação.",
+    ],
+    related: ["speed-test-teste-de-velocidade", "velocidade-contratada", "perda-de-pacotes"],
+  },
+  {
     id: "buffering",
     term: "Buffering",
     definition: [
