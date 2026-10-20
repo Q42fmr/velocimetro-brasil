@@ -1,0 +1,26 @@
+{
+  "name": "velocimetro-brasil",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Teste de velocidade de internet — site estático em Next.js (React) com medidor real de download, upload, ping e jitter.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "preview": "npx serve out",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "16.4.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^5.9.0",
+    "vitest": "^5.0.5"
+  }
+}
