@@ -21,14 +21,6 @@ export const site = {
   /** E-mail de contato — usado na página Fale Conosco e nas políticas. */
   contactEmail: "contato@velocimetrobrasil.com.br",
 
-  /**
-   * Destino do formulário Fale Conosco.
-   * - "" (vazio): o envio abre o cliente de e-mail (mailto:) com os campos preenchidos.
-   * - URL (ex.: "https://seu-servidor/contato.php"): o formulário faz POST comum com os
-   *   campos `nome`, `email`, `assunto`, `mensagem`.
-   */
-  contactFormAction: "",
-
   /** Servidor de medição. Precisa expor `GET /__down?bytes=N` e `POST /__up` com CORS liberado. */
   speedtest: {
     baseUrl: "https://speed.cloudflare.com",

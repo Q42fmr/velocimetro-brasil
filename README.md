@@ -9,8 +9,9 @@ Next.js 16 (App Router, `output: "export"`), React 19, TypeScript, CSS Modules. 
 |---|---|
 | `npm install` | зависимости |
 | `npm run dev` | дев-сервер `http://localhost:3000` |
-| `npm run build` | сборка → папка `out/` (готовый статический сайт) |
-| `npm run preview` | отдать `out/` локально на `http://localhost:8080` |
+| `npm run build` | сборка → папка `out/` (готовый статический сайт, `index.html`) |
+| `npm run build:php` | то же, но главная — `index.php` с PHP-трекингом (см. ниже); для PHP-хостинга |
+| `npm run preview` | отдать `out/` локально на `http://localhost:8080` (только статический вариант) |
 | `npm test` | юнит-тесты чистой математики (Vitest) |
 | `npm run typecheck` | `tsc --noEmit` |
 
@@ -50,13 +51,22 @@ nginx `try_files $uri $uri.html $uri/ =404;` (`serve`, GitHub Pages, Netlify д�
 `robots.txt`, JSON-LD (по спецификации они обязаны быть абсолютными). На сборке переопределяется через
 `NEXT_PUBLIC_SITE_URL` (так делает workflow GitHub Pages). Если домена ещё нет — ничего менять не нужно, сайт работает.
 
-## Форма Fale Conosco
+## PHP-вариант (index.php + трекинг)
 
-`site.contactFormAction`:
+`npm run build:php` = статическая сборка + `scripts/php-index.mjs`: главная превращается в `index.php` с тремя
+PHP-блоками из кита `Whites_maker/spec_footer` (файлы `scripts/php/*.php` — скопированы дословно, **не править**):
+перед `<!DOCTYPE>`, перед `</head>`, сразу после `<body>`. `index.html` удаляется, все ссылки на главную
+переписываются на `index.php`. Остальные страницы — обычные `.html`.
 
-- `""` (по умолчанию) — отправка открывает почтовый клиент (`mailto:` на `site.contactEmail`) с заполненными полями.
-- URL своего скрипта — форма делает обычный `POST` с полями `nome`, `email`, `assunto`, `mensagem`
-  (+ honeypot `website`, должен быть пустым). Разметка: `<form id="form-contato">` в `src/components/ContactForm.tsx`.
+Как работает: на главной одна «голая» `<form id="lead">` (без `action`/`method`/JS) с полями `name`, `lastname`,
+`email`, `phone`, `message`. Отправка — нативный GET на ту же `index.php`; PHP-блок видит `?name`/`?email`,
+вызывает настроенные пиксели и через 500 мс редиректит на `/thank-you.html` (страница есть, `noindex`).
+Страница `fale-conosco.html` формы не содержит — ведёт на `index.php#contacts`.
+
+Настройка — переменные окружения (`.env` в `landings/`, читается через Dotenv при `$isDev = false`):
+`GA4_MEASUREMENT_ID`, `GOOGLE_CONVERSION_LABEL`, `BING_PIXEL_ID`, `FB_PIXEL_ID`, `FB_EVENT_NAME`,
+`WHITE_FORM_RETURN_PAGE` (по умолчанию `thank-you`). Пока `$isDev = true`, пиксели выключены, редирект работает.
+Хостингу нужен PHP ≥ 8.0 (`str_ends_with`). Политики конфиденциальности/cookies уже описывают эти пиксели.
 
 ## Сервер измерения
 

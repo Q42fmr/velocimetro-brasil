@@ -1,10 +1,9 @@
-
 import { ContentPage } from "@/components/ContentPage";
-import { ContactForm } from "@/components/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
 import { site } from "@/config/site";
-import { buildMetadata } from "@/lib/seo";
 import { pageKeywords } from "@/content/keywords";
+import { absoluteUrl, buildMetadata } from "@/lib/seo";
+import styles from "./page.module.css";
 
 export const metadata = buildMetadata({
   title: "Fale conosco",
@@ -27,7 +26,7 @@ export default function ContatoPage() {
           "@context": "https://schema.org",
           "@type": "ContactPage",
           name: "Fale conosco",
-          url: `${site.url}/fale-conosco/`,
+          url: absoluteUrl("fale-conosco.html"),
           mainEntity: {
             "@type": "Organization",
             name: site.name,
@@ -46,14 +45,42 @@ export default function ContatoPage() {
         }}
       />
 
-      <p>
-        Antes de nos escrever, vale a pena conferir o <a href="faq.html" >FAQ</a>, onde
-        respondemos às dúvidas mais comuns sobre o teste de velocidade, como funciona a medição e
-        por que o resultado pode variar entre tentativas. Se a sua pergunta não estiver lá, use o
-        formulário abaixo — respondemos pelo e-mail informado.
-      </p>
+      <div className={styles.grid}>
+        <div className="prose">
+          <p>
+            Antes de nos escrever, vale a pena conferir o <a href="faq.html">FAQ</a>, onde respondemos às dúvidas mais
+            comuns sobre o teste de velocidade, como funciona a medição e por que o resultado pode variar entre
+            tentativas. Se a sua pergunta não estiver lá, envie uma mensagem pelo formulário da página inicial —
+            respondemos pelo e-mail informado.
+          </p>
+          <p>
+            <a href="index.html#contacts" className="btn btn--lg">
+              Enviar mensagem
+            </a>
+          </p>
+          <h2>Outras formas de contato</h2>
+          <p>
+            E-mail: <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>
+            <br />
+            Atendimento: segunda a sexta, das 9h às 18h (horário de Brasília).
+          </p>
+        </div>
 
-      <ContactForm />
+        <aside className={styles.card} aria-labelledby="dados-empresa">
+          <h2 id="dados-empresa" className="card__title">
+            Dados da empresa
+          </h2>
+          <address className={styles.address}>
+            <span>{site.legal.razaoSocial}</span>
+            <span>CNPJ: {site.legal.cnpj}</span>
+            <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>
+          </address>
+          <p className="card__text">
+            Assuntos relacionados a dados pessoais (LGPD) podem ser tratados pelo mesmo e-mail — veja a{" "}
+            <a href="politica-de-privacidade.html">Política de Privacidade</a>.
+          </p>
+        </aside>
+      </div>
     </ContentPage>
   );
 }
