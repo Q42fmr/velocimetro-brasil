@@ -1,0 +1,87 @@
+.tester { display: flex; flex-direction: column; gap: 2rem; }
+
+.stage {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius) * 1.5);
+  box-shadow: var(--shadow);
+  padding: 1.5rem 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.controls { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; width: 100%; max-width: 420px; }
+.progress { width: 100%; height: 0.5rem; accent-color: var(--color-primary); }
+
+/* Cartões Ping / Jitter / Download / Upload */
+.cards {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem;
+  width: 100%;
+}
+.card {
+  --card-color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--card-color);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  background: var(--color-surface);
+  display: flex; flex-direction: column; gap: 0.35rem;
+  transition: box-shadow 0.2s;
+}
+.card[data-active="true"] { box-shadow: 0 0 0 3px var(--color-primary-soft); background: var(--color-bg); }
+.cardHead { display: flex; align-items: baseline; gap: 0.4rem; flex-wrap: wrap; }
+.cardDot { width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--card-color); align-self: center; }
+.cardLabel { font-weight: 700; }
+.cardHint { font-size: 0.8rem; color: var(--color-muted); }
+.cardValue { display: flex; align-items: baseline; gap: 0.3rem; font-size: 1.6rem; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.cardUnit { font-size: 0.85rem; font-weight: 600; color: var(--color-muted); }
+.rating, .ratingPlaceholder { display: inline-block; font-size: 0.78rem; font-weight: 700; border-radius: 999px; padding: 0.1rem 0.6rem; width: fit-content; min-height: 1.3rem; }
+.rating[data-rating="excelente"] { background: #dff5ea; color: #0a6b45; }
+.rating[data-rating="boa"] { background: #e3ecfb; color: #0a3f98; }
+.rating[data-rating="regular"] { background: #fff1dc; color: #8a4a00; }
+.rating[data-rating="ruim"] { background: #fde3e3; color: #9b1c1c; }
+html[data-contrast="high"] .rating { background: var(--color-primary); color: var(--color-on-primary); }
+
+/* Conexão */
+.connection {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem 1.5rem;
+  width: 100%; margin: 0; padding-top: 1rem; border-top: 1px solid var(--color-border);
+  font-size: 0.95rem;
+}
+.connection dt { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-muted); }
+.connection dd { margin: 0.1rem 0 0; font-weight: 600; overflow-wrap: anywhere; }
+.muted { color: var(--color-muted); font-weight: 400; font-size: 0.9rem; }
+
+/* Análise */
+.subTitle { font-size: 1.15rem; margin: 0 0 0.75rem; }
+.verdict { }
+.verdictList { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.75rem; }
+.verdictItem {
+  display: flex; gap: 0.75rem; align-items: flex-start;
+  border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.85rem 1rem; background: var(--color-bg);
+}
+.verdictIcon {
+  flex: 0 0 1.6rem; height: 1.6rem; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center; font-weight: 800;
+  background: var(--color-success); color: #fff;
+}
+.verdictItem[data-ok="false"] .verdictIcon { background: var(--color-warning); }
+html[data-contrast="high"] .verdictIcon { color: var(--color-on-primary); }
+.verdictDetail { margin: 0.2rem 0 0; color: var(--color-muted); font-size: 0.9rem; }
+
+.actions { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+
+/* Histórico */
+.historyHead { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+.tableWrap { overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius); }
+.tableWrap table { font-size: 0.95rem; font-variant-numeric: tabular-nums; }
+.tableWrap td, .tableWrap th { white-space: nowrap; }
+.history p { margin-top: 0.75rem; font-size: 0.9rem; }
+
+@media (max-width: 760px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .stage { padding: 1.25rem 0.9rem; }
+}

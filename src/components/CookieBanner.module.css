@@ -1,0 +1,16 @@
+.banner {
+  position: fixed;
+  left: 1rem; right: 1rem; bottom: 1rem;
+  z-index: 100;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  padding: 1rem 1.25rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(16, 32, 64, 0.18);
+  font-size: 0.95rem;
+}
+.text { margin: 0; flex: 1 1 320px; }
+html[data-contrast="high"] .banner { box-shadow: none; }
