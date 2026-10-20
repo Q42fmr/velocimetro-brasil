@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import { ContentPage } from "@/components/ContentPage";
 import { site } from "@/config/site";
 import { pageKeywords } from "@/content/keywords";
@@ -9,7 +9,7 @@ export const metadata = buildMetadata({
   title: "Termos de Uso",
   description:
     "Termos de Uso do Velocímetro Brasil: condições para utilizar o teste de velocidade de internet gratuito, limites de responsabilidade e regras de uso do serviço.",
-  path: "/termos-de-uso/",
+  path: "termos-de-uso.html",
   keywords: pageKeywords("terms"),
 });
 
@@ -18,7 +18,7 @@ export default function TermosDeUsoPage() {
     <ContentPage
       title="Termos de Uso"
       lead="Condições gerais para o uso do teste de velocidade de internet gratuito oferecido pelo Velocímetro Brasil."
-      crumbs={[{ href: "/termos-de-uso/", label: "Termos de Uso" }]}
+      crumbs={[{ href: "termos-de-uso.html", label: "Termos de Uso" }]}
     >
       <p className="field__hint">
         Última atualização: <time dateTime={LEGAL_LAST_UPDATED}>{LEGAL_LAST_UPDATED_LABEL}</time>
@@ -123,7 +123,7 @@ export default function TermosDeUsoPage() {
       <p>
         Dúvidas sobre estes Termos de Uso podem ser enviadas para{" "}
         <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a> ou pela página{" "}
-        <Link href="/fale-conosco/">Fale conosco</Link>.
+        <a href="fale-conosco.html" >Fale conosco</a>.
       </p>
     </ContentPage>
   );

@@ -29,9 +29,8 @@ jobs:
       - run: npm test
       - run: npm run build
         env:
-          # Preview no GitHub Pages fica em um subcaminho; com domínio próprio, remova as duas linhas.
+          # Só para canonical/OG/sitemap (URLs absolutas). Links e assets são relativos e não dependem disto.
           NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
-          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out

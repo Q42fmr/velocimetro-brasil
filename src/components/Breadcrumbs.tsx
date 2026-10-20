@@ -1,15 +1,15 @@
-import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
 import { absoluteUrl } from "@/lib/seo";
 
 export interface Crumb {
+  /** Arquivo relativo à raiz do site, ex.: "faq.html". */
   href: string;
   label: string;
 }
 
 /** Trilha de navegação + BreadcrumbList (schema.org). O último item é a página atual. */
 export function Breadcrumbs({ items }: { items: Crumb[] }) {
-  const trail: Crumb[] = [{ href: "/", label: "Início" }, ...items];
+  const trail: Crumb[] = [{ href: "index.html", label: "Início" }, ...items];
   return (
     <nav aria-label="Trilha de navegação" className="breadcrumbs">
       <ol>
@@ -20,7 +20,7 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
             </li>
           ) : (
             <li key={c.href}>
-              <Link href={c.href}>{c.label}</Link>
+              <a href={c.href}>{c.label}</a>
             </li>
           ),
         )}

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { site } from "@/config/site";
 import { LogoMark } from "@/components/Logo";
 import styles from "./Footer.module.css";
@@ -24,7 +23,7 @@ export function Footer() {
           <ul className={styles.list}>
             {site.nav.map((l) => (
               <li key={l.href}>
-                <Link href={l.href}>{l.label}</Link>
+                <a href={l.href}>{l.label}</a>
               </li>
             ))}
           </ul>
@@ -35,7 +34,7 @@ export function Footer() {
           <ul className={styles.list}>
             {site.footerLinks.map((l) => (
               <li key={l.href}>
-                <Link href={l.href}>{l.label}</Link>
+                <a href={l.href}>{l.label}</a>
               </li>
             ))}
           </ul>

@@ -7,7 +7,6 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CookieBanner } from "@/components/CookieBanner";
 import { JsonLd } from "@/components/JsonLd";
-import { absoluteUrl } from "@/lib/seo";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,7 +14,6 @@ export const metadata: Metadata = {
   title: { default: site.name, template: `%s | ${site.name}` },
   description: site.description,
   applicationName: site.name,
-  icons: { icon: absoluteUrl("/icon.svg") },
   formatDetection: { telephone: false },
 };
 
@@ -32,6 +30,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang={site.lang}>
       <head>
+        {/* Relativo à pasta do site (o `icons` do metadata geraria URL absoluta). */}
+        <link rel="icon" href="./icon.svg" type="image/svg+xml" />
         <script dangerouslySetInnerHTML={{ __html: a11yBootScript }} />
         <JsonLd
           data={{

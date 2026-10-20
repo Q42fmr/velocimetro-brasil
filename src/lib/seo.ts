@@ -5,16 +5,20 @@ export interface PageSeo {
   /** Título da página (sem o nome do site — o template adiciona). */
   title: string;
   description: string;
-  /** Caminho absoluto com barra final, ex.: "/faq/". */
+  /** Arquivo da página, ex.: "faq.html"; "/" para a home. */
   path: string;
   keywords: readonly string[];
   /** Título completo da aba (ignora o template). Útil na home. */
   absoluteTitle?: string;
 }
 
-/** `site.url` + caminho absoluto. Preserva o subcaminho de `site.url` (ex.: GitHub Pages). */
+/**
+ * `site.url` + caminho. Aceita "/faq.html", "faq.html" ou "index.html" (= raiz).
+ * Usado só onde a URL precisa ser absoluta: canonical, Open Graph, sitemap, JSON-LD.
+ */
 export function absoluteUrl(path: string): string {
-  return `${site.url}${path.startsWith("/") ? path : `/${path}`}`;
+  const clean = path.replace(/^\/+/, "").replace(/^index\.html$/, "");
+  return `${site.url}/${clean}`;
 }
 
 export function buildMetadata(seo: PageSeo): Metadata {

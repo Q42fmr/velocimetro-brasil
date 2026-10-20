@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import { ContentPage } from "@/components/ContentPage";
 import { site } from "@/config/site";
 import { pageKeywords } from "@/content/keywords";
@@ -9,7 +9,7 @@ export const metadata = buildMetadata({
   title: "Política de Privacidade",
   description:
     "Política de Privacidade do Velocímetro Brasil: como tratamos dados pessoais no teste de velocidade de internet, em conformidade com a LGPD (Lei nº 13.709/2018).",
-  path: "/politica-de-privacidade/",
+  path: "politica-de-privacidade.html",
   keywords: pageKeywords("privacy"),
 });
 
@@ -18,7 +18,7 @@ export default function PoliticaDePrivacidadePage() {
     <ContentPage
       title="Política de Privacidade"
       lead="Como o Velocímetro Brasil trata dados pessoais ao oferecer o teste de velocidade de internet, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)."
-      crumbs={[{ href: "/politica-de-privacidade/", label: "Política de Privacidade" }]}
+      crumbs={[{ href: "politica-de-privacidade.html", label: "Política de Privacidade" }]}
     >
       <p className="field__hint">
         Última atualização: <time dateTime={LEGAL_LAST_UPDATED}>{LEGAL_LAST_UPDATED_LABEL}</time>
@@ -31,7 +31,7 @@ export default function PoliticaDePrivacidadePage() {
         como &ldquo;controlador&rdquo; ou &ldquo;nós&rdquo;. Dúvidas sobre proteção de dados podem
         ser enviadas para{" "}
         <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a> ou pela página{" "}
-        <Link href="/fale-conosco/">Fale conosco</Link>. O endereço físico do controlador pode ser
+        <a href="fale-conosco.html" >Fale conosco</a>. O endereço físico do controlador pode ser
         solicitado por esse mesmo e-mail.
       </p>
 
@@ -64,7 +64,7 @@ export default function PoliticaDePrivacidadePage() {
         </dd>
         <dt>(c) Formulário Fale Conosco</dt>
         <dd>
-          Ao preencher o formulário em <Link href="/fale-conosco/">Fale conosco</Link>,
+          Ao preencher o formulário em <a href="fale-conosco.html" >Fale conosco</a>,
           coletamos nome, e-mail, assunto e mensagem, usados exclusivamente para responder à sua
           dúvida, sugestão ou solicitação.
         </dd>
@@ -108,7 +108,7 @@ export default function PoliticaDePrivacidadePage() {
         tratados com base no seu consentimento; informação sobre entidades com as quais
         compartilhamos dados; e revogação do consentimento. Para exercer qualquer desses direitos,
         envie uma mensagem para <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>{" "}
-        ou use a página <Link href="/fale-conosco/">Fale conosco</Link>.
+        ou use a página <a href="fale-conosco.html" >Fale conosco</a>.
       </p>
 
       <h2>7. Segurança da informação</h2>
@@ -141,7 +141,7 @@ export default function PoliticaDePrivacidadePage() {
         ou ao tratamento dos seus dados pessoais, fale com{" "}
         <strong>{site.legal.razaoSocial}</strong> pelo e-mail{" "}
         <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a> ou pela página{" "}
-        <Link href="/fale-conosco/">Fale conosco</Link>.
+        <a href="fale-conosco.html" >Fale conosco</a>.
       </p>
     </ContentPage>
   );

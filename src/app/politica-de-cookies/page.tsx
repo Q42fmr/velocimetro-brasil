@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import { ContentPage } from "@/components/ContentPage";
 import { site } from "@/config/site";
 import { pageKeywords } from "@/content/keywords";
@@ -9,7 +9,7 @@ export const metadata = buildMetadata({
   title: "Política de Cookies",
   description:
     "Política de Cookies do Velocímetro Brasil: veja o que fica salvo no seu navegador (preferências e histórico do teste de velocidade) e como apagar esses dados.",
-  path: "/politica-de-cookies/",
+  path: "politica-de-cookies.html",
   keywords: pageKeywords("cookies"),
 });
 
@@ -18,7 +18,7 @@ export default function PoliticaDeCookiesPage() {
     <ContentPage
       title="Política de Cookies"
       lead="Como o Velocímetro Brasil usa armazenamento local do navegador — e por que não usamos cookies de publicidade ou rastreamento."
-      crumbs={[{ href: "/politica-de-cookies/", label: "Política de Cookies" }]}
+      crumbs={[{ href: "politica-de-cookies.html", label: "Política de Cookies" }]}
     >
       <p className="field__hint">
         Última atualização: <time dateTime={LEGAL_LAST_UPDATED}>{LEGAL_LAST_UPDATED_LABEL}</time>
@@ -86,8 +86,8 @@ export default function PoliticaDeCookiesPage() {
         sites diferentes para fins de perfilamento publicitário. Os únicos dados que saem do seu
         navegador durante o uso do site são os necessários para executar o teste de velocidade
         junto ao servidor de medição speed.cloudflare.com (veja a{" "}
-        <Link href="/politica-de-privacidade/">Política de Privacidade</Link>) e, se você optar
-        por enviá-los, os dados do formulário <Link href="/fale-conosco/">Fale conosco</Link>.
+        <a href="politica-de-privacidade.html" >Política de Privacidade</a>) e, se você optar
+        por enviá-los, os dados do formulário <a href="fale-conosco.html" >Fale conosco</a>.
       </p>
 
       <h2>4. Como limpar esses dados</h2>
@@ -135,7 +135,7 @@ export default function PoliticaDeCookiesPage() {
       <p>
         Dúvidas sobre esta Política de Cookies podem ser enviadas para{" "}
         <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a> ou pela página{" "}
-        <Link href="/fale-conosco/">Fale conosco</Link>.
+        <a href="fale-conosco.html" >Fale conosco</a>.
       </p>
     </ContentPage>
   );
