@@ -28,7 +28,10 @@ Next.js 16 (App Router, `output: "export"`), React 19, TypeScript, CSS Modules. 
 `termos-de-uso.html`, `politica-de-cookies.html`, `404.html`. Опционально для «красивых» URL без `.html`:
 nginx `try_files $uri $uri.html $uri/ =404;` (`serve`, GitHub Pages, Netlify делают это сами).
 
-Папки `faq/`, `glossario/`… рядом с `.html` — служебные файлы Next (`__next.*`), на работу не влияют.
+`npm run build` после `next build` запускает `scripts/clean-export.mjs`: из `out/` удаляются служебные файлы Next
+(RSC-payload'ы `*.txt`, папки `<маршрут>/__next.*`, `_not-found.*`, манифесты и чанки, на которые не ссылается ни одна
+страница). Остаётся только то, что сайт реально загружает: 8 html, `_next/static/chunks/`, `icon.svg`, `og.png`,
+`robots.txt`, `sitemap.xml`, `.nojekyll` (~1 МБ).
 
 ## Где что менять
 
