@@ -5,7 +5,7 @@
   "description": "Teste de velocidade de internet — site estático em Next.js (React) com medidor real de download, upload, ping e jitter.",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && node scripts/clean-export.mjs",
     "preview": "serve out -l 8080 -n",
     "test": "vitest run",
     "test:watch": "vitest",
