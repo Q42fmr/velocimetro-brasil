@@ -9,7 +9,7 @@ export const metadata = buildMetadata({
   title: "Glossário de internet: Mbps, ping, latência, jitter e banda larga",
   description:
     "Entenda os principais termos de internet e banda larga: Mbps, MB/s, download, upload, ping, latência, jitter, Wi-Fi, fibra óptica e muito mais.",
-  path: "/glossario/",
+  path: "glossario.html",
   keywords: pageKeywords("glossary"),
 });
 
@@ -41,7 +41,7 @@ export default function GlossarioPage() {
     <ContentPage
       title="Glossário de internet"
       lead="Os principais termos usados em um teste de velocidade de internet, explicados em linguagem simples: de Mbps e MB/s a ping, latência, jitter e tecnologias de banda larga."
-      crumbs={[{ href: "/glossario/", label: "Glossário" }]}
+      crumbs={[{ href: "glossario.html", label: "Glossário" }]}
       wide
     >
       <nav aria-label="Índice alfabético" className="prose">
@@ -99,7 +99,7 @@ export default function GlossarioPage() {
             "@type": "DefinedTerm",
             name: term.term,
             description: term.definition.join("\n\n"),
-            "@id": `${absoluteUrl("/glossario/")}#${term.id}`,
+            "@id": `${absoluteUrl("glossario.html")}#${term.id}`,
           })),
         }}
       />

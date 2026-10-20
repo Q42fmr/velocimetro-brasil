@@ -47,17 +47,18 @@ export const site = {
     warmupMs: 1_500,
   },
 
+  /** Links internos são relativos à pasta do site (arquivos planos): funcionam em qualquer servidor, subpasta ou file://. */
   nav: [
-    { href: "/", label: "Teste de velocidade" },
-    { href: "/faq/", label: "FAQ" },
-    { href: "/glossario/", label: "Glossário" },
-    { href: "/fale-conosco/", label: "Fale conosco" },
+    { href: "index.html", label: "Teste de velocidade" },
+    { href: "faq.html", label: "FAQ" },
+    { href: "glossario.html", label: "Glossário" },
+    { href: "fale-conosco.html", label: "Fale conosco" },
   ],
 
   footerLinks: [
-    { href: "/politica-de-privacidade/", label: "Política de Privacidade" },
-    { href: "/termos-de-uso/", label: "Termos de Uso" },
-    { href: "/politica-de-cookies/", label: "Política de Cookies" },
+    { href: "politica-de-privacidade.html", label: "Política de Privacidade" },
+    { href: "termos-de-uso.html", label: "Termos de Uso" },
+    { href: "politica-de-cookies.html", label: "Política de Cookies" },
   ],
 } as const;
 

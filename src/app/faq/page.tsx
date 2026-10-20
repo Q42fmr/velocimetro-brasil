@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import { ContentPage } from "@/components/ContentPage";
 import { Faq } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
@@ -10,7 +10,7 @@ export const metadata = buildMetadata({
   title: "FAQ – Perguntas frequentes sobre o teste de velocidade",
   description:
     "Tire suas dúvidas sobre o teste de velocidade de internet: download, upload, ping, jitter, Mbps, regra da Anatel e como melhorar sua conexão.",
-  path: "/faq/",
+  path: "faq.html",
   keywords: pageKeywords("faq"),
 });
 
@@ -19,7 +19,7 @@ export default function FaqPage() {
     <ContentPage
       title="Perguntas frequentes sobre o teste de velocidade"
       lead="Reunimos as dúvidas mais comuns de quem usa o Velocímetro Brasil para medir a velocidade da internet, entender os resultados e comparar com a velocidade contratada."
-      crumbs={[{ href: "/faq/", label: "FAQ" }]}
+      crumbs={[{ href: "faq.html", label: "FAQ" }]}
     >
       <p>
         Antes de rodar um novo teste de velocidade, vale conhecer o que cada número do resultado
@@ -31,8 +31,8 @@ export default function FaqPage() {
       <div className="notice">
         <p>
           <strong>Não encontrou sua dúvida?</strong> Consulte nosso{" "}
-          <Link href="/glossario/">glossário de termos de internet</Link> ou{" "}
-          <Link href="/fale-conosco/">fale conosco</Link> diretamente.
+          <a href="glossario.html" >glossário de termos de internet</a> ou{" "}
+          <a href="fale-conosco.html" >fale conosco</a> diretamente.
         </p>
       </div>
       <JsonLd

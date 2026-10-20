@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import Link from "next/link";
+
 import { site } from "@/config/site";
 import styles from "./ContactForm.module.css";
 
@@ -145,7 +145,7 @@ export function ContactForm() {
           <input type="checkbox" name="consentimento" required />
           <span>
             Li e concordo com a{" "}
-            <Link href="/politica-de-privacidade/">Política de Privacidade</Link>.
+            <a href="politica-de-privacidade.html" >Política de Privacidade</a>.
           </span>
         </label>
 

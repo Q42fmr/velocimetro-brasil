@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+
 import { useEffect, useState } from "react";
 import { COOKIE_CONSENT_KEY } from "@/lib/storageKeys";
 import styles from "./CookieBanner.module.css";
@@ -33,7 +33,7 @@ export function CookieBanner() {
       <p className={styles.text}>
         Usamos armazenamento local e cookies estritamente necessários para guardar suas preferências de acessibilidade e o
         histórico dos seus testes de velocidade neste dispositivo. Saiba mais na{" "}
-        <Link href="/politica-de-cookies/">Política de Cookies</Link>.
+        <a href="politica-de-cookies.html" >Política de Cookies</a>.
       </p>
       <button type="button" className="btn" onClick={accept}>
         Entendi

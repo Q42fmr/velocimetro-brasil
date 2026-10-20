@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: absoluteUrl("/"), lastModified: now, changeFrequency: "weekly", priority: 1 },
     ...site.nav
-      .filter((l) => l.href !== "/")
+      .filter((l) => l.href !== "index.html")
       .map((l) => ({ url: absoluteUrl(l.href), lastModified: now, changeFrequency: "monthly" as const, priority: 0.7 })),
     ...site.footerLinks.map((l) => ({ url: absoluteUrl(l.href), lastModified: legal, changeFrequency: "yearly" as const, priority: 0.3 })),
   ];

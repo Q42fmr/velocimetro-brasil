@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import { site } from "@/config/site";
 import { faqItems } from "@/content/faq";
 import { pageKeywords } from "@/content/keywords";
@@ -247,12 +247,12 @@ export default function HomePage() {
           </h2>
           <Faq items={faqTeaser} idPrefix="home-faq" />
           <p style={{ marginTop: "1.25rem" }}>
-            <Link href="/faq/" className="btn btn--ghost">
+            <a href="faq.html" className="btn btn--ghost">
               Ver todas as perguntas frequentes
-            </Link>{" "}
-            <Link href="/glossario/" className="btn btn--ghost">
+            </a>{" "}
+            <a href="glossario.html" className="btn btn--ghost">
               Glossário de termos de internet
-            </Link>
+            </a>
           </p>
         </div>
       </section>
