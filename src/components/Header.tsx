@@ -8,7 +8,7 @@ import styles from "./Header.module.css";
 /** Arquivo da página atual ("faq.html"; "" = home). Só no cliente: funciona em servidor, subpasta ou file://. */
 function currentFile(): string {
   const last = window.location.pathname.split("/").pop() ?? "";
-  return last === "index.html" ? "" : last;
+  return last === "index.html" || last === "index.php" ? "" : last;
 }
 
 export function Header() {

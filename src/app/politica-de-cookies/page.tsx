@@ -79,15 +79,23 @@ export default function PoliticaDeCookiesPage() {
       </table>
       </div>
 
-      <h2>3. O que não usamos</h2>
+      <h2>3. Cookies de terceiros e medição de anúncios</h2>
       <p>
-        O {site.name} <strong>não utiliza</strong> cookies de publicidade, pixels de rastreamento,
-        ferramentas de analytics de terceiros ou qualquer mecanismo que identifique você entre
-        sites diferentes para fins de perfilamento publicitário. Os únicos dados que saem do seu
+        Por padrão, o {site.name} <strong>não utiliza</strong> cookies de publicidade, pixels de
+        rastreamento ou ferramentas de analytics de terceiros. Os únicos dados que saem do seu
         navegador durante o uso do site são os necessários para executar o teste de velocidade
         junto ao servidor de medição speed.cloudflare.com (veja a{" "}
-        <a href="politica-de-privacidade.html" >Política de Privacidade</a>) e, se você optar
-        por enviá-los, os dados do formulário <a href="fale-conosco.html" >Fale conosco</a>.
+        <a href="politica-de-privacidade.html">Política de Privacidade</a>) e, se você optar por
+        enviá-los, os dados do <a href="index.html#contacts">formulário de contato</a>.
+      </p>
+      <p>
+        Quando o site é divulgado por meio de campanhas de anúncios, o operador pode habilitar, na
+        página inicial, ferramentas de medição de campanhas que gravam cookies próprios dos
+        fornecedores: Google Ads/Google Analytics (cookies <code>_ga</code>, <code>_gcl_au</code> e
+        similares, até 2 anos), Meta Pixel (<code>_fbp</code>, 3 meses) e Microsoft Advertising
+        (<code>_uetsid</code>, <code>_uetvid</code>, até 13 meses). Elas servem para contar visitas e
+        registrar o envio do formulário como conversão da campanha. Você pode bloqueá-las nas
+        configurações de cookies do navegador sem prejuízo ao teste de velocidade.
       </p>
 
       <h2>4. Como limpar esses dados</h2>

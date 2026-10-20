@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && node scripts/clean-export.mjs",
+    "build:php": "npm run build && node scripts/php-index.mjs",
     "preview": "serve out -l 8080 -n",
     "test": "vitest run",
     "test:watch": "vitest",

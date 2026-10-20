@@ -62,11 +62,11 @@ export default function PoliticaDePrivacidadePage() {
           dispositivo que você está usando; você pode apagá-los a qualquer momento limpando o
           histórico na página inicial ou os dados de navegação do seu navegador.
         </dd>
-        <dt>(c) Formulário Fale Conosco</dt>
+        <dt>(c) Formulário de contato</dt>
         <dd>
-          Ao preencher o formulário em <a href="fale-conosco.html" >Fale conosco</a>,
-          coletamos nome, e-mail, assunto e mensagem, usados exclusivamente para responder à sua
-          dúvida, sugestão ou solicitação.
+          Ao preencher o formulário de contato na <a href="index.html#contacts">página inicial</a>,
+          coletamos nome, sobrenome (opcional), e-mail, telefone (opcional) e mensagem, usados
+          exclusivamente para responder à sua dúvida, sugestão ou solicitação.
         </dd>
       </dl>
 
@@ -81,12 +81,20 @@ export default function PoliticaDePrivacidadePage() {
 
       <h2>4. Com quem compartilhamos dados</h2>
       <p>
-        Os únicos terceiros envolvidos no funcionamento do {site.name} são: o operador do servidor
-        de medição citado (Cloudflare, por meio de speed.cloudflare.com), que recebe diretamente o
-        IP do seu navegador durante o teste; e, caso o formulário Fale Conosco esteja configurado
-        para envio a um sistema externo, o destinatário responsável por processar essas
-        mensagens em nome do operador do site. Não compartilhamos dados com redes de publicidade,
-        corretores de dados ou qualquer outro terceiro para fins de marketing.
+        Os terceiros envolvidos no funcionamento do {site.name} são: o operador do servidor de
+        medição citado (Cloudflare, por meio de speed.cloudflare.com), que recebe diretamente o IP
+        do seu navegador durante o teste; e o sistema que processa as mensagens do formulário de
+        contato em nome do operador do site. Não vendemos dados pessoais nem os repassamos a
+        corretores de dados.
+      </p>
+      <p>
+        Quando o site é divulgado por meio de anúncios, o operador pode habilitar ferramentas de
+        medição de campanhas na página inicial — Google Ads/Google Analytics (Google), Meta Pixel
+        (Meta) e Microsoft Advertising (Microsoft). Quando ativas, elas registram a visita e, após
+        o envio do formulário, o evento de conversão, podendo receber os dados informados no
+        formulário (nome, e-mail e telefone) de forma protegida para atribuição da campanha. Essas
+        ferramentas são operadas por seus respectivos fornecedores, conforme as políticas de
+        privacidade de cada um, e podem ser recusadas nas configurações de cookies do navegador.
       </p>
 
       <h2>5. Retenção dos dados</h2>

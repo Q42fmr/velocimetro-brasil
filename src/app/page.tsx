@@ -4,6 +4,7 @@ import { faqItems } from "@/content/faq";
 import { pageKeywords } from "@/content/keywords";
 import { Faq } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
+import { LeadForm } from "@/components/LeadForm";
 import { SpeedTest } from "@/components/SpeedTest/SpeedTest";
 import { buildMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
@@ -283,7 +284,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="section section--alt" aria-labelledby="faq-titulo">
+      <LeadForm />
+      <section className="section" aria-labelledby="faq-titulo">
         <div className="container">
           <h2 id="faq-titulo" className="section__title">
             Perguntas frequentes sobre o teste de velocidade
